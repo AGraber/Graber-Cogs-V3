@@ -1,0 +1,6 @@
+{
+    "name": "anistalker",
+    "author": ["Graber"],
+    "short": "Stalk your friends' Anilist activity.",
+    "description": "Monitor Anilist activity from users and post updates on a channel"
+}
