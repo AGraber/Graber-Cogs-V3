@@ -13,17 +13,17 @@ anilist_api_url = 'https://graphql.anilist.co'
 # GraphQL queries
 
 user_id_query = '''
-query ($username: String) { # Define which variables will be used in the query (id)
-    User (name: $username) { # Insert our variables into the query arguments (id) (type: ANIME is hard-coded in the query)
+query ($username: String) {
+    User (name: $username) {
         id
     }
 }
 '''
 
 activity_query = '''
-query ($id: Int, $created: Int) { # Define which variables will be used in the query (id)
+query ($id: Int, $created: Int) {
     Page {
-        activities (userId: $id, createdAt_greater: $created, sort: ID, type: MEDIA_LIST) { # Insert our variables into the query arguments (id) (type: ANIME is hard-coded in the query)
+        activities (userId: $id, createdAt_greater: $created, sort: ID, type: MEDIA_LIST) {
             ... on ListActivity {
                 type
                 status
