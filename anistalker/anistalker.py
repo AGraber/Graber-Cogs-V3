@@ -129,7 +129,7 @@ class AniStalker(commands.Cog, name="AniStalker"):
                                     continue
                                 data = await res.json()
                     except aiohttp.ClientError as the_exception:
-                        await self.bot.get_channel(channel).send('Failed to fetch data from Anilist GraphQL API. The website is likely experiencing high load and/or is down.')
+                        #await self.bot.get_channel(channel).send('Failed to fetch data from Anilist GraphQL API. The website is likely experiencing high load and/or is down.')
                         print(the_exception)
                         return
 
