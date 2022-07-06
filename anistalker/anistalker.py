@@ -103,7 +103,7 @@ class AniStalker(commands.Cog, name="AniStalker"):
 
         async with self.config.guild(ctx.guild).anilist_users() as anilist_users:
             if str(user_id) in anilist_users:
-                del anilist_users[user_id]
+                del anilist_users[str(user_id)]
                 await ctx.send(f'Removing {target} (ID: {user_id}) from AniStalker!')
             else:
                 anilist_users[user_id] = int(time.time())
