@@ -154,6 +154,20 @@ class AniStalker(commands.Cog, name="AniStalker"):
                                 description = f'Episodes {activity["progress"]}'
                             else:
                                 description = f'Episode {activity["progress"]}'
+                        elif status == "rewatched episode":
+                            title = f"Rewatched {activity['media']['title']['romaji']}"
+                            url = activity['siteUrl']
+                            if '-' in activity['progress']:
+                                description = f'Episodes {activity["progress"]}'
+                            else:
+                                description = f'Episode {activity["progress"]}'
+                        elif status == "read chapter":
+                            title = f"Read {activity['media']['title']['romaji']}"
+                            url = activity['siteUrl']
+                            if '-' in activity['progress']:
+                                description = f'Chapters {activity["progress"]}'
+                            else:
+                                description = f'Chapter {activity["progress"]}'
                         elif status == "completed":
                             title = f"Completed {activity['media']['title']['romaji']}"
                             url = activity['siteUrl']
