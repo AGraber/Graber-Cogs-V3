@@ -171,6 +171,9 @@ class AniStalker(commands.Cog, name="AniStalker"):
                         elif status == "completed":
                             title = f"Completed {activity['media']['title']['romaji']}"
                             url = activity['siteUrl']
+                        elif status == "rewatched":
+                            title = f"Completed rewatching {activity['media']['title']['romaji']}"
+                            url = activity['siteUrl']
 
                         if title == None:
                             continue # unsupported activity
