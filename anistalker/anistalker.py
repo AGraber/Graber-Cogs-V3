@@ -38,7 +38,7 @@ query ($id: Int, $created: Int) {
                 progress
                 media {
                     title {
-                        romaji
+                        english
                     }
                     coverImage {
                         extraLarge,
@@ -148,31 +148,31 @@ class AniStalker(commands.Cog, name="AniStalker"):
                         
                         status = activity['status']
                         if status == "watched episode":
-                            title = f"Watched {activity['media']['title']['romaji']}"
+                            title = f"Watched {activity['media']['title']['english']}"
                             url = activity['siteUrl']
                             if '-' in activity['progress']:
                                 description = f'Episodes {activity["progress"]}'
                             else:
                                 description = f'Episode {activity["progress"]}'
                         elif status == "rewatched episode":
-                            title = f"Rewatched {activity['media']['title']['romaji']}"
+                            title = f"Rewatched {activity['media']['title']['english']}"
                             url = activity['siteUrl']
                             if '-' in activity['progress']:
                                 description = f'Episodes {activity["progress"]}'
                             else:
                                 description = f'Episode {activity["progress"]}'
                         elif status == "read chapter":
-                            title = f"Read {activity['media']['title']['romaji']}"
+                            title = f"Read {activity['media']['title']['english']}"
                             url = activity['siteUrl']
                             if '-' in activity['progress']:
                                 description = f'Chapters {activity["progress"]}'
                             else:
                                 description = f'Chapter {activity["progress"]}'
                         elif status == "completed":
-                            title = f"Completed {activity['media']['title']['romaji']}"
+                            title = f"Completed {activity['media']['title']['english']}"
                             url = activity['siteUrl']
                         elif status == "rewatched":
-                            title = f"Completed rewatching {activity['media']['title']['romaji']}"
+                            title = f"Completed rewatching {activity['media']['title']['english']}"
                             url = activity['siteUrl']
 
                         if title == None:
