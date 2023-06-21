@@ -148,7 +148,7 @@ class AniStalker(commands.Cog, name="AniStalker"):
                         url = ''
 
                         mediaTitle = activity['media']['title']['english']
-                        if mediaTitle is None:
+                        if mediaTitle == None:
                             mediaTitle = activity['media']['title']['romaji']
                         
                         status = activity['status']
