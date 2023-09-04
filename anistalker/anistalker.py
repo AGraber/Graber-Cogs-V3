@@ -177,7 +177,7 @@ class AniStalker(commands.Cog, name="AniStalker"):
                             title = f"Completed {mediaTitle}"
                             url = activity['siteUrl']
                         elif status == "rewatched":
-                            title = f"Completed rewatching {activitymediaTitle}"
+                            title = f"Completed rewatching {mediaTitle}"
                             url = activity['siteUrl']
 
                         if title == None:
