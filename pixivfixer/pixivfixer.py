@@ -9,6 +9,11 @@ from datetime import datetime
 from redbot.core import commands
 from redbot.core.bot import Red
 
+HTML_TAGS_REGEX = re.compile('<.*?>')
+
+def cleanhtml(raw_html):
+  cleantext = re.sub(HTML_TAGS_REGEX, '', raw_html)
+  return cleantext
 
 class PixivFixer(commands.Cog, name='PixivFixer'):
     def __init__(self, bot: Red):
@@ -40,7 +45,7 @@ class PixivFixer(commands.Cog, name='PixivFixer'):
                     final_text = await response.text()
                     artwork = json.loads(final_text)
 
-                    embed = discord.Embed(title=artwork['title'], url=artwork['url'], description=f"{artwork['description']}\n{', '.join(artwork['tags'])}")
+                    embed = discord.Embed(title=artwork['title'], url=artwork['url'], description=f"{cleanhtml(artwork['description'])}\n{', '.join(artwork['tags'])}")
                     embed.set_author(name=artwork['author_name'], url=f"https://www.pixiv.net/users/{artwork['author_id']}")
                     embed.color = 0x26a7de
 
