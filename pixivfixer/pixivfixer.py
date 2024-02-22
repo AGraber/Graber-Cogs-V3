@@ -30,8 +30,8 @@ class PixivFixer(commands.Cog, name='PixivFixer'):
         if match is None:
             return
 
-        artwork_id = match.group(0)
-        image_index = int(match.group(1))
+        artwork_id = match.group(1)
+        image_index = int(match.group(2)) if len(match.group(2)) > 0 else 0
 
         request_string = f'https://phixiv.net/api/info?id={artwork_id}&language=en'
         async with aiohttp.ClientSession() as session:
