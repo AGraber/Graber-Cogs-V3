@@ -33,14 +33,14 @@ class PixivFixer(commands.Cog, name='PixivFixer'):
         artwork_id = match.group(0)
         image_index = int(match.group(1))
 
-        request_string = f'https://phixiv.net/api/info?id={artwork_id}&language=en'#f'https://api.vxtwitter.com/Twitter/status/{tweet_id}'
+        request_string = f'https://phixiv.net/api/info?id={artwork_id}&language=en'
         async with aiohttp.ClientSession() as session:
             async with session.get(request_string) as response:
                 if response.ok is True:
                     final_text = await response.text()
                     artwork = json.loads(final_text)
 
-                    embed = discord.Embed(title=artwork['title'], url=artwork['url'], description=f'{artwork['description']}\n{', '.join(artwork['tags'])}')
+                    embed = discord.Embed(title=artwork['title'], url=artwork['url'], description=f"{artwork['description']}\n{', '.join(artwork['tags'])}")
                     embed.set_author(name=artwork['author_name'], url=f"https://www.pixiv.net/users/{artwork['author_id']}")
                     embed.color = 0x26a7de
 
