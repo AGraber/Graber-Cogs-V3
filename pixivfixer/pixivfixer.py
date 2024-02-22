@@ -44,12 +44,11 @@ class PixivFixer(commands.Cog, name='PixivFixer'):
                     embed.set_author(name=artwork['author_name'], url=f"https://www.pixiv.net/users/{artwork['author_id']}")
                     embed.color = 0x26a7de
 
-                    if image_index < 0 or image_index >= len(artwork['images']):
+                    if image_index < 0 or image_index >= len(artwork['image_proxy_urls']):
                         image_index = 0
                     
                     artwork_media_url = artwork['image_proxy_urls'][image_index]
 
-                    # check if artwork url ends with .mp4
                     if artwork_media_url.endswith('.mp4'):
                         await message.channel.send(embed=embed)
 
