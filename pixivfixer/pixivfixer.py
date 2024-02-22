@@ -26,7 +26,7 @@ class PixivFixer(commands.Cog, name='PixivFixer'):
             return
 
         content = message.content
-        match = re.search(r'https?://(?:www\.)?pixiv\.com/(?:.*/)(?:artworks/|member_illust\.php\?illust_id=)([0-9]*)/?([0-9]*)?', content)
+        match = re.search(r'https?://(?:www\.)?pixiv\.com/(?:.*/)?(?:artworks/|member_illust\.php\?illust_id=)([0-9]*)/?([0-9]*)?', content)
         if match is None:
             return
 
