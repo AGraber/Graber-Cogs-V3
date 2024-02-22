@@ -1,0 +1,6 @@
+{
+    "name": "Pixiv Fixer",
+    "author": ["Graber"],
+    "short": "Pixiv embed fixer for discord",
+    "description": "Embed pixiv images properly"
+}
