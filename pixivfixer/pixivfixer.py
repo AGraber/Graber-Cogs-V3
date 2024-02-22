@@ -51,6 +51,8 @@ class PixivFixer(commands.Cog, name='PixivFixer'):
 
                     # check if artwork url ends with .mp4
                     if artwork_media_url.endswith('.mp4'):
+                        await message.channel.send(embed=embed)
+
                         if os.path.exists('original_video.mp4'):
                             os.remove('original_video.mp4')
 
@@ -76,3 +78,6 @@ class PixivFixer(commands.Cog, name='PixivFixer'):
                     else:
                         embed.set_image(url=artwork_media_url)
                         await message.channel.send(embed=embed)
+
+                    # edit the original message to suppress any embed from twitter proper
+                    await message.edit(suppress=True)
